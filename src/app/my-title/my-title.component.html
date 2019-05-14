@@ -1,0 +1,15 @@
+<table>
+  <tr>
+    <th>Id</th>
+  </tr>
+  <input #id name="id" type="text">
+  <input #email name="email" type="text">
+  <input #name name="name" type="text">
+
+  <tr *ngFor="let comment of filteredData">
+    <th>{{comment.id}}</th>
+    <th>{{comment.email}}</th>
+    <th>{{comment.name}}</th>
+
+  </tr>
+</table>
