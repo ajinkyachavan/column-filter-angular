@@ -2,14 +2,14 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {fromEvent, merge} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {Comments} from './comments';
-import {MyTitleService} from './my-title.service';
+import {MyTableService} from './my-table.service';
 
 @Component({
-  selector: 'app-my-title',
-  templateUrl: './my-title.component.html',
-  styleUrls: ['./my-title.component.css']
+  selector: 'app-my-table',
+  templateUrl: './my-table.component.html',
+  styleUrls: ['./my-table.component.css']
 })
-export class MyTitleComponent implements OnInit {
+export class MyTableComponent implements OnInit {
   @ViewChild('id') idRef: ElementRef;
   @ViewChild('name') nameRef: ElementRef;
   @ViewChild('email') emailRef: ElementRef;
@@ -19,12 +19,12 @@ export class MyTitleComponent implements OnInit {
   filterTypes: Map<string, string>;
   currentFilterType: string;
 
-  constructor(private myTitleService: MyTitleService) {}
+  constructor(private mytableService: MyTableService) {}
 
   ngOnInit() {
     this.filterTypes = new Map();
 
-    this.myTitleService.getTableData().subscribe(
+    this.mytableService.getTableData().subscribe(
       (res: Comments[]) => {
         this.tableData = this.filteredData = res;
       }

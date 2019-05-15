@@ -6,7 +6,7 @@ import {Comments} from './comments';
 @Injectable({
   providedIn: 'root'
 })
-export class MyTitleService {
+export class MyTableService {
 
   constructor(private http: HttpClient) {}
 
